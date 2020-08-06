@@ -1,0 +1,178 @@
+$p-color: #82cdf5;
+$a-color: #357b70;
+$vi-color: #489c79;
+$button-c1: #357b70;
+$button-c2: #FFFFFF;
+$grid-color: #D3D3D3;
+$zero-point: #edc655;
+$five-point: #fcffad;
+$hun-point:  #f76414;
+
+.header {
+  display: flex;
+  width: 98%;
+  padding: 20px;
+
+  .header_item {
+    flex: 0 1 200px;
+  }
+
+  .header_item:last-child {
+    flex-grow: 1;
+    text-align: right;
+  }
+}
+
+  .nav_list {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+.profile {
+  float: left;
+  height: 15%;
+  width: 15%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+
+}
+/*color is off*/
+body {
+    background-color: $p-color;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 400;
+    }
+/*color is off*/
+a {
+  color: $a-color;
+}
+
+a:visited {
+  /* visited link */
+  color: $p-color;
+}
+
+a:hover, a:focus {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: $vi-color;
+}
+/*once again oddly discolored on c*/
+button,
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: $button-c1;
+  color: $button-c2;
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover, 
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+.footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: $grid-color;
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+/*change sun stat*/
+/*my setting say this code off*/
+@keyframes color-change {
+  0% {
+    fill: $zero-point;
+  }
+  50% {
+    fill: $five-point;
+  }
+  100% {
+    fill: $hun-point;
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+/*change sun end*/
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
