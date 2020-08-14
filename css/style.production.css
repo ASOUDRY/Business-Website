@@ -1,40 +1,42 @@
-$fir-col: #82cdf5;
-$a-color: #357b70;
-$vi-color: #489c79;
-$button-c1: #357b70;
-$button-c2: #FFFFFF;
-$grid-color: #D3D3D3;
-$zero-point: #edc655;
-$five-point: #fcffad;
-$hun-point:  #f76414;
-
+:root {
+   --background-color: #52cdf5;
+   --color1: #357b70;
+   --color2: #05676e;
+   --color3: #489c79;
+   --color4: red;
+   --background-color1: #357b70;
+   --fill1: #edc655;
+   --fill2: #fcffad;
+   --fill3: #f76414;
+}
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 98%;
-  padding: 20px;
-
-  .header_item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 200px;
-            flex: 0 1 200px;
-  }
-
-  .header_item:last-child {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    text-align: right;
-  }
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+width: 98%;
+padding: 20px;
 }
 
-  .nav_list {
-    list-style-type: none;
-    li {
-      display: inline-block;
-      margin-left: 15px;
-    }
+.header_item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 200px;
+          flex: 0 1 200px;
+}
+
+.header_item:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+}
+
+.nav_list {
+  list-style-type: none;
+}
+
+    .nav_list li {
+    display: inline-block;
+    margin-left: 15px;
   }
 
 .profile {
@@ -47,20 +49,19 @@ $hun-point:  #f76414;
   margin: 10px;
 
 }
-/*color is off*/
 body {
-    background-color: $p-color;
+    background-color: var(--background-color);
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: 400;
     }
-/*color is off*/
+
 a {
-  color: $a-color;
+  color: var(--color1);
 }
 
 a:visited {
   /* visited link */
-  color: $p-color;
+  color: var(--color2);
 }
 
 a:hover, a:focus {
@@ -70,9 +71,9 @@ a:hover, a:focus {
 
 a:active {
   /* selected link */
-  color: $vi-color;
+  color: var(--color3);
 }
-/*once again oddly discolored on c*/
+
 button,
 .button {
   /* overwrites browser defaults and resets the border */
@@ -80,8 +81,8 @@ button,
   /* takes the font from the outer container */
   font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: $button-c1;
-  color: $button-c2;
+  background-color: var(--background-color1);
+  /*color: var(--color4);*/
   text-decoration: none;
   /*adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
@@ -111,7 +112,7 @@ button:focus,
           flex-direction: column;
   text-align: center;
 }
-
+/*grid css on about page start*/
 .grid {
   display: -ms-grid;
   display: grid;
@@ -119,9 +120,8 @@ button:focus,
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
 }
-
 .grid__item {
-  background-color: $grid-color;
+  background-color: var(--color4);
 }
 
 @media all and (max-width: 500px) {
@@ -148,28 +148,29 @@ button:focus,
     font-size: 22px;
   }
 }
+/*css for svg*/
+
 /*change sun stat*/
-/*my setting say this code off*/
 @-webkit-keyframes color-change {
   0% {
-    fill: $zero-point;
+    fill: var(--fill1);
   }
   50% {
-    fill: $five-point;
+    fill: var(--fill2);
   }
   100% {
-    fill: $hun-point;
+    fill: var(--fill3);
   }
 }
 @keyframes color-change {
   0% {
-    fill: $zero-point;
+    fill: var(--fill1);
   }
   50% {
-    fill: $five-point;
+    fill: var(--fill2);
   }
   100% {
-    fill: $hun-point;
+    fill: var(--fill3);
   }
 }
 
