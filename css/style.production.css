@@ -1,5 +1,5 @@
 :root {
-   --background-color: #52cdf5;
+   --background-color: #7e52f5;
    --color1: #357b70;
    --color2: #05676e;
    --color3: #489c79;
@@ -50,10 +50,22 @@ padding: 20px;
 
 }
 body {
+  min-height: 100vh;
     background-color: var(--background-color);
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: 400;
     }
+
+.opener {
+  text-align: center;
+}
+
+.alignment {
+  text-align: center;
+}
+.content {
+  display: inline-block;
+}
 
 a {
   color: var(--color1);
@@ -62,6 +74,10 @@ a {
 a:visited {
   /* visited link */
   color: var(--color2);
+}
+
+ul {
+  list-style-type: none;
 }
 
 a:hover, a:focus {
@@ -102,6 +118,9 @@ button:focus,
 }
 
 .footer {
+  position: sticky;
+  top: 100%;
+  background-color: pink;
   clear: both;
   display: -webkit-box;
   display: -ms-flexbox;
